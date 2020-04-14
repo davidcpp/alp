@@ -3,7 +3,8 @@ from django.utils import timezone
 
 class Team(models.Model):
     team = models.CharField(max_length=100)
-    team_short = models.CharField(max_length=10)
+    team_short = models.CharField(max_length=10, default="")
+    comments = models.TextField(default="")
 
 class Match(models.Model):
     team_1 = models.CharField(max_length=100)
@@ -13,8 +14,7 @@ class Match(models.Model):
     round_game = models.IntegerField(default=0)
     game_date = models.DateField(
             default=timezone.now)
-    comments = models.TextField()
-    place = models.CharField(max_length=100)
+    comments = models.TextField(default="")
 
     def publish(self):
         self.published_date = timezone.now()
