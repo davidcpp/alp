@@ -6,9 +6,6 @@ class Team(models.Model):
     team_short = models.CharField(max_length=10, default="")
     comments = models.TextField(default="")
 
-    def __str__(self):
-        return self.team
-
 class Match(models.Model):
     team_1 = models.CharField(max_length=100)
     team_2 = models.CharField(max_length=100)
