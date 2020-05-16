@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Liga {{league_name}} - wyniki meczy</title>
+    </head>
+    <body>
+
+        {% for match in matches %}
+<table>
+  <tr>
+    <th>{{match.host_team}}</th>
+    <th>-</th>
+    <th>{{match.guest_team}}</th>
+      <th> </th>
+      <th>{{match.host_team_goals}}</th>
+    <th>:</th>
+    <th>{{match.guest_team_goals}}</th>
+  </tr>
+    </table>
+{% endfor %}
+    </body>
+</html>
