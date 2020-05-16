@@ -18,10 +18,10 @@ class League(models.Model):
 
 class Team(models.Model):
     league = models.ManyToManyField(League)
-    team_name = models.CharField(max_length=50)
+    team_name = models.CharField(max_length=100)
     team_short = models.CharField(max_length=20, default="")
     place = models.CharField(max_length=50, null=True)
-    comments = models.TextField(default="", null=True)
+    comments = models.TextField(default="", null=True, blank=True)
 
     def __str__(self):
         return self.team_name
@@ -35,7 +35,7 @@ class Match(models.Model):
     round_game = models.PositiveSmallIntegerField(default=0)
     game_date = models.DateField(default=timezone.now)
     place = models.CharField(max_length=50, null=True)
-    comments = models.TextField(default="", null=True)
+    comments = models.TextField(default="", null=True, blank=True)
 
     def __str__(self):
         return self.host_team.__str__() + '-' + self.guest_team.__str__() + ' ' + self.host_team_goals.__str__() + ':' + self.guest_team_goals.__str__()
