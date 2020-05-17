@@ -1,0 +1,37 @@
+{% extends 'alp/base.html' %}
+{% block content %}
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+      <th scope="col">Miejsce</th>
+      <th scope="col">Nazwa drużyny</th>
+      <th scope="col">Mecze</th>
+      <th scope="col">Zwycięstwa</th>
+      <th scope="col">Remisy</th>
+      <th scope="col">Porażki</th>
+      <th scope="col">Bramki strzelone</th>
+      <th scope="col">Bramki stracone</th>
+      <th scope="col">Punkty</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for row_table in team_ranking%}
+  <tr>
+      <th scope="col">{{row_table.ranking}}</th>
+      <th scope="row">{{row_table.team_name}}</th>
+      <th scope="row">{{row_table.matches}}</th>
+      <th scope="row">{{row_table.wins}}</th>
+      <th scope="row">{{row_table.draws}}</th>
+      <th scope="row">{{row_table.losses}}</th>
+      <th scope="row">{{row_table.goals_scored}}</th>
+      <th scope="row">{{row_table.goals_lost}}</th>
+      <th scope="row">{{row_table.points}}</th>
+  </tr>
+
+{% endfor %}
+
+
+ </table>
+ {{matches.host_team_goals}}
+{% endblock %}
