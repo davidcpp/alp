@@ -71,6 +71,18 @@
           </a></li>
           {% endfor %}
         </ul>
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tabela
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+         {% for league in leagues %}
+          {% with name="matches/" %}
+          <li><a href="/tables/{{ league.league_name }}/">
+            {% endwith %}
+          {{league.league_name}}
+          </a></li>
+          {% endfor %}
+        </ul>
         <li><a href="#">Tabela</a></li>
         <li><a href="#">Statystyki</a></li>
         <li><a href="#">Drużyny</a></li>
