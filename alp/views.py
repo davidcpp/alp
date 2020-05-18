@@ -8,6 +8,12 @@ def league_match_list(request, league_name):
     leagues = get_list_or_404(League)
     return render(request, 'alp/matches_results.html', {'matches' : matches, 'league_name': league_name, 'leagues': leagues})
 
+def league_team_match_list(request, team_name):
+    matches = get_list_or_404(Match, Q(host_team__team_name=team_name) | Q(guest_team__team_name=team_name))
+    leagues = get_list_or_404(League)
+    return render(request, 'alp/matches_team_results.html', {'matches' : matches, 'leagues': leagues, 'team_name': team_name})
+
+
 def league_list(request):
     leagues = get_list_or_404(League)
     return render(request, 'alp/home.html', {'leagues': leagues})
@@ -62,3 +68,4 @@ def add_result_to_table(team_name, table, goals_scored, goals_lost):
         row.result(goals_scored, goals_lost)
         table.append(row)
         print(row.print())
+

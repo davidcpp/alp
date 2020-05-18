@@ -1,0 +1,49 @@
+{% extends 'alp/base.html' %}
+{% block content %}
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+      <th scope="col">Gospodarz</th>
+      <th scope="col">Wynik</th>
+      <th scope="col">Gość</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for match in matches %}
+    {% if match.host_team|slugify == team_name|slugify and  match.host_team_goals < match.guest_team_goals %}
+  <tr >
+    <th class="bg-danger">{{match.host_team}}</th>
+    <th class="bg-danger">{{match.host_team_goals}} - {{match.guest_team_goals}}</th>
+    <th class="bg-danger">{{match.guest_team}}</th>
+  </tr>
+    {% elif match.guest_team|slugify == team_name|slugify and  match.host_team_goals > match.guest_team_goals %}
+  <tr >
+    <th class="bg-danger">{{match.host_team}}</th>
+    <th class="bg-danger">{{match.host_team_goals}} - {{match.guest_team_goals}}</th>
+    <th class="bg-danger">{{match.guest_team}}</th>
+  </tr>
+    {% elif match.host_team|slugify == team_name|slugify and  match.host_team_goals > match.guest_team_goals %}
+  <tr >
+    <th class="bg-success">{{match.host_team}}</th>
+    <th class="bg-success">{{match.host_team_goals}} - {{match.guest_team_goals}}</th>
+    <th class="bg-success">{{match.guest_team}}</th>
+  </tr>
+    {% elif match.guest_team|slugify == team_name|slugify and  match.host_team_goals < match.guest_team_goals %}
+  <tr >
+    <th class="bg-success">{{match.host_team}}</th>
+    <th class="bg-success">{{match.host_team_goals}} - {{match.guest_team_goals}}</th>
+    <th class="bg-success">{{match.guest_team}}</th>
+  </tr>
+    {% else %}
+  <tr >
+
+    <th class="bg-light">{{match.host_team}}</th>
+    <th class="bg-light">{{match.host_team_goals}} - {{match.guest_team_goals}}</th>
+    <th class="bg-light">{{match.guest_team}}</th>
+  </tr>
+
+    {% endif %}
+  {% endfor %}</table>
+{% endblock %}

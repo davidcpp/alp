@@ -20,15 +20,15 @@
   {% for row_table in team_ranking%}
   <tr>
       <th scope="col">{{row_table.ranking}}</th>
-      <th scope="row">{{row_table.team_name}}</th>
-      <th scope="row">{{row_table.matches}}</th>
-      <th scope="row">{{row_table.wins}}</th>
-      <th scope="row">{{row_table.draws}}</th>
-      <th scope="row">{{row_table.losses}}</th>
-      <th scope="row">{{row_table.goals_scored}}</th>
-      <th scope="row">{{row_table.goals_lost}}</th>
-      <th scope="row">{{row_table.goal_balance}}</th>
-      <th scope="row">{{row_table.points}}</th>
+      <th scope="row"><a href="/teams/{{row_table.team_name}}/">{{row_table.team_name}}</a></th>
+      <th scope="row" style="text-align: center;">{{row_table.matches}}</th>
+      <th scope="row" style="text-align: center;">{{row_table.wins}}</th>
+      <th scope="row" style="text-align: center;">{{row_table.draws}}</th>
+      <th scope="row" style="text-align: center;">{{row_table.losses}}</th>
+      <th scope="row" style="text-align: center;">{{row_table.goals_scored}}</th>
+      <th scope="row" style="text-align: center;">{{row_table.goals_lost}}</th>
+      <th scope="row" style="text-align: center;">{{row_table.goal_balance}}</th>
+      <th class="bg-warning" style="text-align: center;">{{row_table.points}}</th>
   </tr>
 
 {% endfor %}

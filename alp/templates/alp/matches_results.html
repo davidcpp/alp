@@ -12,11 +12,11 @@
   <tbody>
 
   {% for match in matches %}
-
   <tr>
-    <th scope="row">{{match.host_team}}</th>
+    <th scope="row"> <a href="/teams/{{match.host_team}}/">
+        {{match.host_team}}</a></th>
     <th scope="row">{{match.host_team_goals}} - {{match.guest_team_goals}}</th>
-    <th scope="row">{{match.guest_team}}</th>
+      <th scope="row"><a href="/teams/{{match.host_team}}/"> {{match.guest_team}}</a></th>
   </tr>
 
 {% endfor %}</table>
