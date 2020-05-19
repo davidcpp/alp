@@ -1,6 +1,11 @@
 {% extends 'alp/base.html' %}
 {% block content %}
 
-To będzie strona tytułowa...
+  {% for note in notes %}
+    <div> {{note.publish_date}}</div>
+    <h4> {{note.title}}</h4>
+    <ul>{{note.note}}</ul>
+    <ul> {{note.author}}</ul>
+  {% endfor %}
 
 {% endblock %}

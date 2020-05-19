@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 class Sport(models.Model):
     sport_name = models.CharField(max_length=100, default='Football')
@@ -43,4 +44,11 @@ class Match(models.Model):
     def __str__(self):
         return self.host_team.__str__() + '-' + self.guest_team.__str__() + ' ' + self.host_team_goals.__str__() + ':' + self.guest_team_goals.__str__()
 
+class Note(models.Model):
+    publish_date = models.DateTimeField(default=timezone.now)
+    title = models.CharField(max_length=50)
+    note = models.TextField(max_length=500, default="", null=True, blank=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.title

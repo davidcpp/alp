@@ -1,6 +1,6 @@
 from django.shortcuts import get_list_or_404, render
 from django.db.models import Q
-from .models import Match, League, Team
+from .models import Match, League, Team, Note
 from .table import Row_Table
 
 def league_match_list(request, league_name):
@@ -14,9 +14,10 @@ def league_team_match_list(request, team_name):
     return render(request, 'alp/matches_team_results.html', {'matches' : matches, 'leagues': leagues, 'team_name': team_name})
 
 
-def league_list(request):
+def home(request):
     leagues = get_list_or_404(League)
-    return render(request, 'alp/home.html', {'leagues': leagues})
+    notes = get_list_or_404(Note.objects.order_by('-publish_date'))
+    return render(request, 'alp/home.html', {'leagues': leagues, 'notes': notes})
 
 def league_table(request, league_name):
     leagues = get_list_or_404(League)
