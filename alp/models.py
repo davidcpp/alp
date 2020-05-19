@@ -33,12 +33,12 @@ class Match(models.Model):
     host_team_goals = models.PositiveSmallIntegerField(default=0)
     guest_team_goals = models.PositiveSmallIntegerField(default=0)
     round_game = models.PositiveSmallIntegerField(default=0)
-    # game_date = models.DateTimeField(default=timezone.now)
+    game_date = models.DateTimeField(default=timezone.now)
     place = models.CharField(max_length=50, null=True)
     comments = models.TextField(default="", null=True, blank=True)
 
     class Meta:
-        ordering = ['round_game']#,'game_date']
+        ordering = ['round_game','game_date']
 
     def __str__(self):
         return self.host_team.__str__() + '-' + self.guest_team.__str__() + ' ' + self.host_team_goals.__str__() + ':' + self.guest_team_goals.__str__()
