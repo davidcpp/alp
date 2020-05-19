@@ -16,7 +16,7 @@ def league_team_match_list(request, team_name):
 
 def home(request):
     leagues = get_list_or_404(League)
-    notes = get_list_or_404(Note.objects.order_by('-publish_date'))
+    notes = get_list_or_404(Note)
     return render(request, 'alp/home.html', {'leagues': leagues, 'notes': notes})
 
 def league_table(request, league_name):

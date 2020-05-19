@@ -50,5 +50,8 @@ class Note(models.Model):
     note = models.TextField(max_length=500, default="", null=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    class Meta:
+        ordering = ['-publish_date']
+
     def __str__(self):
         return self.title
