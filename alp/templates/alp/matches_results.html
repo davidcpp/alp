@@ -1,23 +1,28 @@
 {% extends 'alp/base.html' %}
 {% block content %}
 
+
+  {% regroup matches by round_game as round_list %}
+  {% for round_game, match_list in round_list %}
+    <ul>Kolejka {{round_game}}</ul>
 <table class="table table-striped">
   <thead>
   <tr>
+      <th scope="col">Data</th>
       <th scope="col">Gospodarz</th>
       <th scope="col">Wynik</th>
       <th scope="col">Gość</th>
     </tr>
   </thead>
   <tbody>
-
-  {% for match in matches %}
+  {% for match in match_list %}
   <tr>
+    <th scope="row"> {{match.game_date}}</a></th>
     <th scope="row"> <a href="/teams/{{match.host_team}}/">
         {{match.host_team}}</a></th>
     <th scope="row">{{match.host_team_goals}} - {{match.guest_team_goals}}</th>
-      <th scope="row"><a href="/teams/{{match.host_team}}/"> {{match.guest_team}}</a></th>
+      <th scope="row"><a href="/teams/{{match.guest_team}}/"> {{match.guest_team}}</a></th>
   </tr>
-
-{% endfor %}</table>
+  {% endfor %}</table>
+{% endfor %}
 {% endblock %}
