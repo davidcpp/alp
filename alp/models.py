@@ -33,7 +33,7 @@ class Match(models.Model):
     host_team_goals = models.PositiveSmallIntegerField(default=0)
     guest_team_goals = models.PositiveSmallIntegerField(default=0)
     round_game = models.PositiveSmallIntegerField(default=0)
-    game_date = models.DateTimeField(default=timezone.now)
+    game_date = models.DateTimeField(default='')
     place = models.CharField(max_length=50, null=True)
     comments = models.TextField(default="", null=True, blank=True)
 
