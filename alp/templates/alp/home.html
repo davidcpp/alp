@@ -1,11 +1,15 @@
 {% extends 'alp/base.html' %}
 {% block content %}
 
-  {% for note in notes %}
-    <div> {{note.publish_date}}</div>
-    <h4> {{note.title}}</h4>
-    <ul>{{note.note}}</ul>
-    <ul> {{note.author}}</ul>
+{% for note in notes %}
+<div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading" ><b>{{note.title}}</b> </div>
+      <div class="panel-body">
+        <p style = "text-align:right";>Dodane <i>{{note.publish_date}} </i> przez: <i>{{note.author}}</i></p>
+        <blockquote>{{note.note}}</blockquote></div>
+    </div>
+  </div>
   {% endfor %}
 
 {% endblock %}

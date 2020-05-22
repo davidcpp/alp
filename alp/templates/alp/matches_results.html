@@ -4,7 +4,7 @@
 
   {% regroup matches by round_game as round_list %}
   {% for round_game, match_list in round_list %}
-    <ul>Kolejka {{round_game}}</ul>
+<h3><span class="label label-default">Kolejka {{round_game}}</span></h3>
 <table class="table table-striped">
   <thead>
   <tr>
@@ -17,11 +17,10 @@
   <tbody>
   {% for match in match_list %}
   <tr>
-    <th scope="row"> {{match.game_date}}</a></th>
-    <th scope="row"> <a href="/teams/{{match.host_team}}/">
-        {{match.host_team}}</a></th>
-      <th scope="row"><a href="/match/{{match.pk}}/">{{match.host_team_goals}} - {{match.guest_team_goals}}</a></th>
-      <th scope="row"><a href="/teams/{{match.guest_team}}/"> {{match.guest_team}}</a></th>
+    <th scope="row" style = "width:20%"> {{match.game_date}}</a></th>
+    <th scope="row" style = "width:20%"> <a href="/teams/{{match.host_team}}/"> {{match.host_team}}</a></th>
+      <th scope="row" style = "width:10%"><a href="/match/{{match.pk}}/">{{match.host_team_goals}} - {{match.guest_team_goals}}</a></th>
+      <th scope="row" style = "width:20%"><a href="/teams/{{match.guest_team}}/"> {{match.guest_team}}</a></th>
   </tr>
   {% endfor %}</table>
 {% endfor %}

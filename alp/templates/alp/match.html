@@ -1,30 +1,44 @@
 {% extends 'alp/base.html' %}
 {% block content %}
 
-
-<h3>{{match.league}} </h3>
-<h4>Kolejka {{match.round_game}}</h4>
-<table class="table table-striped">
-  <thead>
-  <tr>
-      <th scope="col">Data</th>
-      <th scope="col">Gospodarz</th>
-      <th scope="col">Wynik</th>
-      <th scope="col">Gość</th>
+<table class="table">
+    <tr>
+        <td style = "width: 30px; padding: 15px"><i class='far fa-futbol' style='font-size:20px'></i></td>
+        <td ><h4>{{match.league}}</h4></td>
     </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <th scope="row"> {{match.game_date}}</a></th>
-    <th scope="row"> <a href="/teams/{{match.host_team}}/">
-        {{match.host_team}}</a></th>
-    <th scope="row">{{match.host_team_goals}} - {{match.guest_team_goals}}</th>
-      <th scope="row"><a href="/teams/{{match.guest_team}}/"> {{match.guest_team}}</a></th>
-  </tr>
-  </table>
-<h3>Miejsce spotkania: {{match.place}}</h3>
+    <tr>
+        <td style = "width: 30px; padding: 15px"><i class='far fa-clock' style='font-size:20px'></i></td>
+        <td ><h4>{{match.game_date}}</h4></td>
+    </tr>
+    <tr>
+        <td style = "width: 30px; padding: 15px"><i class='fas fa-map-marker-alt' style='font-size:20px'></i></td>
+        <td ><h4>{{match.place}}</h4></td>
+    </tr>
+</table>
+<br>
+<h4>Kolejka {{match.round_game}}</h4>
+<table class="table table-bordered table-striped text-center">
+    <tr>
+        <td style = "width: 45%;"><h4 class="display-4"><a href="/teams/{{match.host_team}}/">{{match.host_team}}</a></h4></td>
+        <td></td>
+        <td style = "width: 45%;"><h4 class="display-4"><a href="/teams/{{match.guest_team}}/"> {{match.guest_team}}</a></h4></td>
+    </tr>
+    <tr>
+        <td><h1 class="display-1" >{{match.host_team_goals}}</h1></td>
+        <td><h1 class="display-1">-</h1></td>
+        <td><h1 class="display-1"> {{match.guest_team_goals}}</h1></td>
+    </tr>
+</table><br>
 {% if match.comments == null or  match.comments == "" %}
 {%else%}
-<ul>Szczegóły meczu: {{match.comments}}</ul>
+
+<table class="table table-bordered table-striped ">
+    <tr>
+        <td style = "width: 45%;"><h5 class="display-5">Szczegóły meczu</h5></td>
+    </tr>
+    <tr>
+        <td><h5 class="display-5" >{{match.comments}}</h5></td>
+    </tr>
+</table>
 {% endif %}
 {% endblock %}
