@@ -13,6 +13,10 @@ def league_team_match_list(request, team_name):
     leagues = get_list_or_404(League)
     return render(request, 'alp/matches_team_results.html', {'matches' : matches, 'leagues': leagues, 'team_name': team_name})
 
+def match_details(request, match_id):
+    leagues = get_list_or_404(League)
+    match = get_list_or_404(Match, pk=match_id)
+    return render(request, 'alp/match.html', {'leagues': leagues, 'match': match[0]})
 
 def home(request):
     leagues = get_list_or_404(League)
