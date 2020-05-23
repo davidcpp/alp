@@ -20,13 +20,13 @@ def note_new(request):
     return render(request, 'alp/note_new.html', {'form': form, 'leagues': leagues})
 
 def league_match_list(request, league_name):
-    matches = get_list_or_404(Match, league__league_name = league_name)
+    matches = Match.objects.all().filter(league__league_name = league_name)
     leagues = get_list_or_404(League)
     return render(request, 'alp/matches_results.html', {'matches' : matches, 'league_name': league_name, 'leagues': leagues})
 
 def league_team_match_list(request, team_name):
-    matches = get_list_or_404(Match, Q(host_team__team_name=team_name) | Q(guest_team__team_name=team_name))
     leagues = get_list_or_404(League)
+    matches = Match.objects.all().filter(Q(host_team__team_name=team_name) | Q(guest_team__team_name=team_name))
     team = get_list_or_404(Team, team_name=team_name)
     # print(matches[0].league.league_name)
     return render(request, 'alp/matches_team_results.html', {'matches' : matches, 'leagues': leagues, 'team': team[0],
@@ -44,7 +44,7 @@ def home(request):
 
 def league_table(request, league_name):
     leagues = get_list_or_404(League)
-    teams = get_list_or_404(Team, league__league_name=league_name)
+    teams = Team.objects.all().filter(league__league_name=league_name)
     table = []
     for team in teams:
         # matches as host
