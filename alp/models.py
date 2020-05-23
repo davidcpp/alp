@@ -18,7 +18,7 @@ class League(models.Model):
         return self.league_name + ' ' + self.season
 
 class Team(models.Model):
-    league = models.ManyToManyField(League)
+    league = models.ManyToManyField(League, related_name='team_league_name')
     team_name = models.CharField(max_length=100)
     team_short = models.CharField(max_length=20, default="")
     place = models.CharField(max_length=50, null=True)

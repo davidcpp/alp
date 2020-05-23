@@ -11,7 +11,10 @@ def league_match_list(request, league_name):
 def league_team_match_list(request, team_name):
     matches = get_list_or_404(Match, Q(host_team__team_name=team_name) | Q(guest_team__team_name=team_name))
     leagues = get_list_or_404(League)
-    return render(request, 'alp/matches_team_results.html', {'matches' : matches, 'leagues': leagues, 'team_name': team_name})
+    team = get_list_or_404(Team, team_name=team_name)
+    print(team[0].league.all())
+    return render(request, 'alp/matches_team_results.html', {'matches' : matches, 'leagues': leagues, 'team': team[0],
+                                                             'team_leagues': team[0].league.all()})
 
 def match_details(request, match_id):
     leagues = get_list_or_404(League)

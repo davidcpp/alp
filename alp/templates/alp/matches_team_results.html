@@ -1,7 +1,35 @@
 {% extends 'alp/base.html' %}
 {% block content %}
 
+
+<table class="table">
+    <tr>
+        <td style = "width: 30px; padding: 15px"><i class='far fa-futbol' style='font-size:20px'></i></td>
+        <td ><h4>{{team.team_name}}</h4></td>
+    </tr>
+    <tr>
+        <td style = "width: 30px; padding: 15px"><i class='far fa-futbol' style='font-size:20px'></i></td>
+        <td ><h4>{{team.team_short}}</h4></td>
+    </tr>
+    <tr>
+        <td style = "width: 30px; padding: 15px"><i class='fas fa-map-marker-alt' style='font-size:20px'></i></td>
+        <td ><h4>{{team.place}}</h4></td>
+    </tr>
+{% if match.comments == null or  match.comments == "" %}
+{%else%}
+    <tr>
+        <td style = "width: 45%;"><h5 class="display-5">Szczegóły drużyny</h5></td>
+    </tr>
+    <tr>
+        <td><h5 class="display-5" >{{match.comments}}</h5></td>
+    </tr>
+</table>
+{% endif %}
+
+
+  {% for team_league in team_leagues %}
 <table class="table table-striped">
+<h4>{{team_league.league_name}}</h4>
   <thead>
   <tr>
       <th scope="col">Data</th>
@@ -11,16 +39,15 @@
     </tr>
   </thead>
   <tbody>
-
   {% for match in matches %}
-    {% if match.host_team|slugify == team_name|slugify and  match.host_team_goals < match.guest_team_goals or match.guest_team|slugify == team_name|slugify and  match.host_team_goals > match.guest_team_goals%}
-  <tr >
+    {% if match.host_team|slugify == team.team_name|slugify and  match.host_team_goals < match.guest_team_goals or match.guest_team|slugify == team.team_name|slugify and  match.host_team_goals > match.guest_team_goals%}
+  <tr>
     <th class="bg-danger">{{match.game_date}}</th>
     <th class="bg-danger"><a href="/teams/{{match.host_team}}/">{{match.host_team}}</a></th>
     <th class="bg-danger"><a href="/match/{{match.pk}}/">{{match.host_team_goals}} - {{match.guest_team_goals}}</a></th>
     <th class="bg-danger"><a href="/teams/{{match.guest_team}}/">{{match.guest_team}}</a></th>
   </tr>
-    {% elif match.host_team|slugify == team_name|slugify and  match.host_team_goals > match.guest_team_goals or match.guest_team|slugify == team_name|slugify and  match.host_team_goals < match.guest_team_goals%}
+    {% elif match.host_team|slugify == team.team_name|slugify and  match.host_team_goals > match.guest_team_goals or match.guest_team|slugify == team.team_name|slugify and  match.host_team_goals < match.guest_team_goals%}
   <tr >
     <th class="bg-success">{{match.game_date}}</th>
     <th class="bg-success"><a href="/teams/{{match.host_team}}/">{{match.host_team}}</a></th>
@@ -37,4 +64,5 @@
 
     {% endif %}
   {% endfor %}</table>
+{% endfor %}
 {% endblock %}
