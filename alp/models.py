@@ -3,26 +3,34 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 class Sport(models.Model):
-    sport_name = models.CharField(max_length=100, default='Football')
+    sport_name = models.CharField(max_length=100, default='Football', unique=True)
     description = models.TextField(default="", null=True)
+
+    class Meta:
+        ordering = ['sport_name']
 
     def __str__(self):
         return self.sport_name
 
 class League(models.Model):
-    league_name = models.CharField(max_length=100, default="")
-    season = models.CharField(max_length=20, default="")
+    league_name = models.CharField(max_length=100, unique=True)
     sport = models.ForeignKey(Sport, on_delete=models.CASCADE)
 
+    class Meta:
+        ordering = ['league_name']
+
     def __str__(self):
-        return self.league_name + ' ' + self.season
+        return self.league_name
 
 class Team(models.Model):
     league = models.ManyToManyField(League, related_name='team_league_name')
-    team_name = models.CharField(max_length=100)
-    team_short = models.CharField(max_length=20, default="")
+    team_name = models.CharField(max_length=100, unique=True)
+    team_short = models.CharField(max_length=20, unique=True)
     place = models.CharField(max_length=50, null=True)
     comments = models.TextField(default="", null=True, blank=True)
+
+    class Meta:
+        ordering = ['team_name']
 
     def __str__(self):
         return self.team_name
@@ -33,7 +41,7 @@ class Match(models.Model):
     guest_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='guest_team')
     host_team_goals = models.PositiveSmallIntegerField(default=0)
     guest_team_goals = models.PositiveSmallIntegerField(default=0)
-    round_game = models.PositiveSmallIntegerField(default=0)
+    round_game = models.PositiveSmallIntegerField(default=1)
     game_date = models.DateTimeField(default=timezone.now)
     place = models.CharField(max_length=50, null=True)
     comments = models.TextField(default="", null=True, blank=True)
