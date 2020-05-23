@@ -5,15 +5,15 @@
  <br>
   <input class="form-control" style = "width:30%" id="search_team_name" type="text" placeholder="Wyszukaj..">
 <br>
-<table id="teams_table" class="table table-striped"  style = "text-align:center" >
-  <thead>
+<table  class="table table-striped"  style = "text-align:center" >
+  <thead >
 
       <th scope="col">Nazwa pełna</th>
       <th scope="col">Nazwa skrócona</th>
       <th scope="col">Miejscowość</th>
 
   </thead>
-    <tbody>
+    <tbody id="teams_table">
   {% for team in teams %}
   <tr >
     <th scope="row"> <a href="/teams/{{team.team_name}}/"> {{team.team_name}}</a></th>
