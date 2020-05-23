@@ -39,8 +39,10 @@ def league_table(request, league_name):
     team_ranking = sort_table(table)
     return render(request, 'alp/league_table.html', {'team_ranking': team_ranking, 'league_name': league_name, 'leagues': leagues})
 
-def calculate_point(win, drow):
-    return 3 * win + drow
+def teams_list(request):
+    leagues = get_list_or_404(League)
+    teams = get_list_or_404(Team.objects.order_by('team_name'))
+    return render(request, 'alp/teams_list.html', {'leagues': leagues, 'teams': teams})
 
 def sort_table(table):
     for row in table:

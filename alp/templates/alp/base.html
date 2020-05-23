@@ -84,14 +84,27 @@
           </a></li>
           {% endfor %}
         </ul>
-        <li><a href="#">Drużyny</a></li>
-        <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+        <li><a href="/teams_list">Drużyny</a></li>
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dodaj
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Dodaj ogłoszenie</a></li>
+            <li><a href="#">Zgłoś ligę</a></li>
+            <li><a href="#">Zgłoś drużynę</a></li>
+            <li><a href="#">Dodaj wynik meczu</a></li>
+        </ul>
+
       </li>
       </ul>
       <a href="mailto:spio201920@gmail.com"><button class="btn btn-danger navbar-btn">Zgłoś wynik meczu</button></a>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/admin"><span class="glyphicon glyphicon-log-in"></span> Logowanie</a></li>
+          {% if request.user.is_authenticated %}
+          <h4>{{request.user.username}}&nbsp;&nbsp;&nbsp;<a href="{% url 'logout' %}">Wyloguj</a></h4>
+          {%else %}
+        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span>Logowanie</a></li>
+          {% endif %}
       </ul>
     </div>
   </div>
