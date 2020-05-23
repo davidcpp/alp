@@ -85,19 +85,20 @@
           {% endfor %}
         </ul>
         <li><a href="/teams_list">Drużyny</a></li>
+
+           {% if user.is_authenticated %}
         <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dodaj
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Dodaj ogłoszenie</a></li>
+          <li><a href="{% url 'note_new' %}">Dodaj ogłoszenie</a></li>
             <li><a href="#">Zgłoś ligę</a></li>
             <li><a href="#">Zgłoś drużynę</a></li>
             <li><a href="#">Dodaj wynik meczu</a></li>
         </ul>
-
       </li>
+          {% endif %}
       </ul>
-      <a href="mailto:spio201920@gmail.com"><button class="btn btn-danger navbar-btn">Zgłoś wynik meczu</button></a>
 
       <ul class="nav navbar-nav navbar-right">
           {% if request.user.is_authenticated %}

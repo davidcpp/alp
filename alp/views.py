@@ -1,7 +1,23 @@
-from django.shortcuts import get_list_or_404, render
+from django.shortcuts import get_list_or_404, render,redirect
 from django.db.models import Q
+from django.utils import timezone
 from .models import Match, League, Team, Note
 from .table import Row_Table
+from .forms import NoteForm
+
+def note_new(request):
+    leagues = get_list_or_404(League)
+    if request.method == "POST":
+        form = NoteForm(request.POST)
+        if form.is_valid():
+            note = form.save(commit=False)
+            note.author = request.user
+            note.publish_date = timezone.now()
+            note.save()
+            return redirect('/')
+    else:
+        form = NoteForm()
+    return render(request, 'alp/note_new.html', {'form': form, 'leagues': leagues})
 
 def league_match_list(request, league_name):
     matches = get_list_or_404(Match, league__league_name = league_name)
