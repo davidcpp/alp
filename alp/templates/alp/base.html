@@ -101,7 +101,8 @@
 
       <ul class="nav navbar-nav navbar-right">
           {% if request.user.is_authenticated %}
-          <h4>{{request.user.username}}&nbsp;&nbsp;&nbsp;<a href="{% url 'logout' %}">Wyloguj</a></h4>
+          <li><a href="/">Zalogowany jako: {{request.user.username}}</a></li>
+          <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span>Wyloguj</a></li>
           {%else %}
         <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span>Logowanie</a></li>
           {% endif %}

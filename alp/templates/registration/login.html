@@ -2,13 +2,15 @@
 {% block content %}
 
 <center>
-<h2>Logowanie</h2>
+<h3>Logowanie</h3>
 <form method="post">
   {% csrf_token %}
   {{ form.as_p  }}
+
 <button type="submit">Zaloguj</button>
 </form>
-
+  <br>
+  <div class="well">Nie masz konta? Wyślij wniosek <a href="mailto:spio201920@gmail.com">tutaj</a></div>
 </center>
 {% endblock %}
 
