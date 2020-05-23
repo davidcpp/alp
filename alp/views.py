@@ -12,7 +12,7 @@ def league_team_match_list(request, team_name):
     matches = get_list_or_404(Match, Q(host_team__team_name=team_name) | Q(guest_team__team_name=team_name))
     leagues = get_list_or_404(League)
     team = get_list_or_404(Team, team_name=team_name)
-    print(team[0].league.all())
+    # print(matches[0].league.league_name)
     return render(request, 'alp/matches_team_results.html', {'matches' : matches, 'leagues': leagues, 'team': team[0],
                                                              'team_leagues': team[0].league.all()})
 
@@ -32,11 +32,13 @@ def league_table(request, league_name):
     table = []
     for team in teams:
         # matches as host
-        matches = get_list_or_404(Match, Q(league__league_name=league_name) & Q(host_team__team_name=team.team_name))
+        matches = Match.objects.all().filter(Q(league__league_name=league_name) & Q(host_team__team_name=team.team_name))
         for match in matches:
             add_result_to_table(team.team_name, table, match.host_team_goals, match.guest_team_goals)
         # matches as guest
-        matches = get_list_or_404(Match, Q(league__league_name=league_name) & Q(guest_team__team_name=team.team_name))
+        matches = Match.objects.all().filter(Q(league__league_name=league_name) & Q(guest_team__team_name=team.team_name))
+        # matches = get_list_or_404(Match, Q(league__league_name=league_name) & Q(guest_team__team_name=team.team_name))
+        print('Hello')
         for match in matches:
             add_result_to_table(team.team_name, table, match.guest_team_goals, match.host_team_goals)
     team_ranking = sort_table(table)
