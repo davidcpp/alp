@@ -47,6 +47,7 @@ def match_form(request):
     leagues = get_list_or_404(League)
     if request.method == "POST":
         form = Match_Form(request.POST)
+        print(request)
         if form.is_valid():
             team = form.save()
             return redirect('/')
