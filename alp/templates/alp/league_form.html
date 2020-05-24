@@ -3,7 +3,18 @@
 
     <h2>Zarejestruj nową ligę</h2>
     <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
+        <table class="table">
+            <tbody>
+              <tr>
+                <td>{{ form.sport.label}}</td>
+                <td>{{ form.sport}}</td>
+              </tr>
+            <tr>
+                <td>{{ form.league_name.label}}</td>
+                <td>{{ form.league_name}}</td>
+              </tr>
+              </tbody>
+          </table>
         <button type="submit" class="save btn btn-default">Zapisz</button>
     </form>
 
