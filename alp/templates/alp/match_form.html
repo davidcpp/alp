@@ -3,7 +3,46 @@
 
     <h2>Zgłoś wynik meczu</h2>
     <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
+        <table class="table">
+            <tbody>
+              <tr>
+                <td>{{ form.league.label}}</td>
+                <td>{{ form.league}}</td>
+              </tr>
+                 <tr>
+                <td>{{ form.round_game.label}}</td>
+                <td>{{ form.round_game}}</td>
+              </tr>
+            <tr>
+                <td>{{ form.host_team.label}}</td>
+                <td>{{ form.host_team}}</td>
+              </tr>
+              <tr>
+                <td>{{ form.host_team_goals.label}}</td>
+                <td>{{ form.host_team_goals}}</td>
+              </tr>
+              <tr>
+                <td>{{ form.guest_team.label}}</td>
+                <td>{{ form.guest_team}}</td>
+              </tr>
+            <tr>
+                <td>{{ form.guest_team_goals.label}}</td>
+                <td>{{ form.guest_team_goals}}</td>
+              </tr>
+                <tr>
+                <td>{{ form.game_date.label}}</td>
+                <td>{{ form.game_date}}</td>
+              </tr>
+              <tr>
+                <td>{{ form.place.label}}</td>
+                <td>{{ form.place}}</td>
+              </tr>
+               <tr>
+                <td>{{ form.comments.label}}</td>
+                <td>{{ form.comments}}</td>
+              </tr>
+            </tbody>
+          </table>
         <button type="submit" class="save btn btn-default">Zapisz</button>
     </form>
 

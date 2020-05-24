@@ -3,8 +3,22 @@
 
     <h2>Nowa notatka</h2>
     <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
+        <table class="table">
+            <tbody>
+              <tr>
+                <td>{{ form.title.label}}</td>
+                <td>{{ form.title}}</td>
+              </tr>
+            <tr>
+                <td>{{ form.note.label}}</td>
+                <td>{{ form.note}}</td>
+              </tr>
+            </tbody>
+          </table>
+
         <button type="submit" class="save btn btn-default">Zapisz</button>
     </form>
+
+
 
 {% endblock %}

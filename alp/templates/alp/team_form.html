@@ -3,7 +3,30 @@
 
     <h2>Zarejestruj nową drużynę</h2>
     <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
+        <table class="table">
+            <tbody>
+              <tr>
+                <td>{{ form.league.label}}</td>
+                <td>{{ form.league}}</td>
+              </tr>
+            <tr>
+                <td>{{ form.team_name.label}}</td>
+                <td>{{ form.team_name}}</td>
+              </tr>
+              <tr>
+                <td>{{ form.team_short.label}}</td>
+                <td>{{ form.team_short}}</td>
+              </tr>
+             <tr>
+                <td>{{ form.place.label}}</td>
+                <td>{{ form.place}}</td>
+              </tr>
+            <tr>
+                <td>{{ form.comments.label}}</td>
+                <td>{{ form.comments}}</td>
+              </tr>
+            </tbody>
+          </table>
         <button type="submit" class="save btn btn-default">Zapisz</button>
     </form>
 
