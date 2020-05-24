@@ -15,17 +15,15 @@
         <td style = "width: 30px; padding: 15px"><i class='fas fa-map-marker-alt' style='font-size:20px'></i></td>
         <td ><h4>{{team.place}}</h4></td>
     </tr>
-{% if match.comments == null or  match.comments == "" %}
+{% if team.comments == null or  team.comments == "" %}
 {%else%}
     <tr>
-        <td style = "width: 45%;"><h5 class="display-5">Szczegóły drużyny</h5></td>
+        <td style = "width: 30px; padding: 15px"><i class='far fa-sticky-note' style='font-size:20px'></i></td>
+        <td ><h4>{{team.comments}}</h4></td>
     </tr>
-    <tr>
-        <td><h5 class="display-5" >{{match.comments}}</h5></td>
-    </tr>
+
 </table>
 {% endif %}
-
 
   {% for team_league in team_leagues %}
 <table class="table table-striped">
