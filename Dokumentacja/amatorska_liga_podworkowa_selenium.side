@@ -1,0 +1,1508 @@
+{
+  "id": "e0828f2f-6f36-48fb-8080-2ea86a71c7bc",
+  "version": "2.0",
+  "name": "amatorskaligapodworkowa",
+  "url": "http://amatorskaligapodworkowa.pythonanywhere.com",
+  "tests": [{
+    "id": "f4b35a12-f274-455d-aed1-4439b661587e",
+    "name": "T02: Wyświetlenie meczów ligi",
+    "commands": [{
+      "id": "19eed32b-5618-45e4-a3f2-61f53f35de93",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "41d65b02-8cef-49e1-ade8-dc1d0906376f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "03177e6b-d1db-4510-8083-75df1311173e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Mecze",
+      "targets": [
+        ["linkText=Mecze", "linkText"],
+        ["css=.dropdown:nth-child(2) > .dropdown-toggle", "css:finder"],
+        ["xpath=//a[contains(text(),'Mecze')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "230315d1-f640-496f-b7f3-6fe552e944e9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Amatorska Liga Podwórkowa Piłki Nożnej",
+      "targets": [
+        ["linkText=Amatorska Liga Podwórkowa Piłki Nożnej", "linkText"],
+        ["css=.open li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Amatorska Liga Podwórkowa Piłki Nożnej')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/matches/Amatorska Liga Podwórkowa Piłki Nożnej/')]", "xpath:href"],
+        ["xpath=//li[2]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Amatorska Liga Podwórkowa Piłki Nożnej')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "74f90bff-1b2e-4d41-b612-217d1a0e5f7d",
+    "name": "T03: Wyświetlenie tabeli ligi (ranking drużyn w lidze)",
+    "commands": [{
+      "id": "38bb28fe-4bdb-4742-a7b1-3cd92cadf1b2",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "90931a96-7c24-45f3-a276-920465f25d34",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6505695c-30ff-416c-bbf2-bdf447847253",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Tabela",
+      "targets": [
+        ["linkText=Tabela", "linkText"],
+        ["css=.dropdown:nth-child(3) > .dropdown-toggle", "css:finder"],
+        ["xpath=//a[contains(text(),'Tabela')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[3]", "xpath:href"],
+        ["xpath=//div[3]/ul/li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "61b8462f-a3ca-4da4-8518-8201d294cd36",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Amatorska Liga Podwórkowa Piłki Nożnej",
+      "targets": [
+        ["linkText=Amatorska Liga Podwórkowa Piłki Nożnej", "linkText"],
+        ["css=.open li:nth-child(1) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Amatorska Liga Podwórkowa Piłki Nożnej')])[2]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[3]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/tables/Amatorska Liga Podwórkowa Piłki Nożnej/')]", "xpath:href"],
+        ["xpath=//li[3]/ul/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "0c686faa-c642-4ac0-8afa-bacf07163340",
+    "name": "T04: Wyświetlenie drużyn",
+    "commands": [{
+      "id": "5c94edda-78a2-4662-873a-adefb14e0780",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1e8da597-85fb-4de5-a2c9-a8b01683ab24",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "32a32802-2a95-43ca-9e2c-5e7b46b22226",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Drużyny",
+      "targets": [
+        ["linkText=Drużyny", "linkText"],
+        ["css=li:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Drużyny')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/teams_list')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Drużyny')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "71fca4ed-80a9-474c-b22a-60124c31065b",
+    "name": "T01: Wyświetlenie strony głównej aplikacji",
+    "commands": [{
+      "id": "238378ea-cee4-468c-895e-fc978f73131c",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cf969045-41ec-4ccc-a0f5-93c2d34f58b9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0e3156cf-9c5f-4ea7-a5f4-74471b9e976b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=.nav:nth-child(1) > li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "912032c3-6a03-449d-b7e0-57ab0d1c98c2",
+    "name": "T08: Zalogowanie się do aplikacj",
+    "commands": [{
+      "id": "112bb258-e015-4ebb-98c2-ba0a564bfc98",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "16b0f399-1d05-4d5b-aa2e-dce2766dd322",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "91229b1b-0efd-4ee8-8074-2dba8e7eb7e2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Logowanie",
+      "targets": [
+        ["linkText=Logowanie", "linkText"],
+        ["css=.navbar-right a", "css:finder"],
+        ["xpath=//a[contains(text(),'Logowanie')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/accounts/login/')]", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Logowanie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1984454d-7fc8-430f-8d44-b669f08ea32f",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_username",
+      "targets": [
+        ["id=id_username", "id"],
+        ["name=username", "name"],
+        ["css=#id_username", "css:finder"],
+        ["xpath=//input[@id='id_username']", "xpath:attributes"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c22d3a6a-9301-489e-9bc2-c657369bee97",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_username",
+      "targets": [
+        ["id=id_username", "id"],
+        ["name=username", "name"],
+        ["css=#id_username", "css:finder"],
+        ["xpath=//input[@id='id_username']", "xpath:attributes"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": "konto_testowe"
+    }, {
+      "id": "cd42f607-9738-4225-ba12-d78384978595",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_password",
+      "targets": [
+        ["id=id_password", "id"],
+        ["name=password", "name"],
+        ["css=#id_password", "css:finder"],
+        ["xpath=//input[@id='id_password']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": "Tester213"
+    }, {
+      "id": "06cd3450-8dae-40ae-bebe-3ee7de9c9965",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(4)",
+      "targets": [
+        ["css=button:nth-child(4)", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zaloguj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "74e0268b-2992-4f2f-ae3a-f67d4812af11",
+    "name": "T07: Wyświetlenie szczegółów meczu",
+    "commands": [{
+      "id": "5692fd8b-0872-43b1-8497-410eaa1ea8a3",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8cf860cd-2b61-4dbc-981b-a0c493e18b76",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0bf8680c-9e72-406c-8d8f-5ed85e22b73a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Mecze",
+      "targets": [
+        ["linkText=Mecze", "linkText"],
+        ["css=.dropdown:nth-child(2) > .dropdown-toggle", "css:finder"],
+        ["xpath=//a[contains(text(),'Mecze')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "59290ce2-f816-4c04-9fe9-3430cfb68950",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Amatorska Liga Podwórkowa Piłki Nożnej",
+      "targets": [
+        ["linkText=Amatorska Liga Podwórkowa Piłki Nożnej", "linkText"],
+        ["css=.open li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Amatorska Liga Podwórkowa Piłki Nożnej')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/matches/Amatorska Liga Podwórkowa Piłki Nożnej/')]", "xpath:href"],
+        ["xpath=//li[2]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Amatorska Liga Podwórkowa Piłki Nożnej')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "892c36bd-b110-4c73-8210-faa1cd29ae60",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=3 - 5",
+      "targets": [
+        ["linkText=3 - 5", "linkText"],
+        ["css=.table:nth-child(2) tr:nth-child(1) > th:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'3 - 5')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/match/9/')]", "xpath:href"],
+        ["xpath=//th[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'3 - 5')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "1385efa2-9328-4cc5-ad79-e4abc4164b45",
+    "name": "T06.2: Wyświetlenie szczegółów drużyny z listy meczów",
+    "commands": [{
+      "id": "10e0fad7-ed80-40f4-a282-e4b08a7c4122",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "232b70e8-a335-4493-9eec-3a163ace90ef",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "81ed43cf-8702-42b6-82e3-d82a8ed4366d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Mecze",
+      "targets": [
+        ["linkText=Mecze", "linkText"],
+        ["css=.dropdown:nth-child(2) > .dropdown-toggle", "css:finder"],
+        ["xpath=//a[contains(text(),'Mecze')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "07bbc2a4-16b1-49e8-999e-66185ca9c2af",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Amatorska Liga Podwórkowa Piłki Nożnej",
+      "targets": [
+        ["linkText=Amatorska Liga Podwórkowa Piłki Nożnej", "linkText"],
+        ["css=.open li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Amatorska Liga Podwórkowa Piłki Nożnej')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/matches/Amatorska Liga Podwórkowa Piłki Nożnej/')]", "xpath:href"],
+        ["xpath=//li[2]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Amatorska Liga Podwórkowa Piłki Nożnej')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "66e22704-2533-4f69-a49b-978143991d67",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ekipa Naramowice",
+      "targets": [
+        ["linkText=Ekipa Naramowice", "linkText"],
+        ["css=.table:nth-child(2) tr:nth-child(1) > th:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ekipa Naramowice')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/teams/Ekipa Naramowice/')]", "xpath:href"],
+        ["xpath=//th[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ekipa Naramowice')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "e56c6e7b-82de-4eeb-9211-992b067dc18a",
+    "name": "T06.1: Wyświetlenie szczegółów drużyny z listy drużyn",
+    "commands": [{
+      "id": "ff9ee50d-1404-4432-a6a8-d4a25baa34c9",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e8f55187-2351-4355-9711-1d6ea126baf4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7265eaeb-bdcf-4321-8c99-fe354a83d8c4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Drużyny",
+      "targets": [
+        ["linkText=Drużyny", "linkText"],
+        ["css=.nav > li:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Drużyny')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/teams_list')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Drużyny')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "86a0dc19-a4b0-4d5d-b67f-deb2eab0cb64",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ekipa Naramowice",
+      "targets": [
+        ["linkText=Ekipa Naramowice", "linkText"],
+        ["css=tr:nth-child(2) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ekipa Naramowice')]", "xpath:link"],
+        ["xpath=//tbody[@id='teams_table']/tr[2]/th/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/teams/Ekipa Naramowice/')]", "xpath:href"],
+        ["xpath=//tr[2]/th/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ekipa Naramowice')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "65834d37-2f9d-4b38-8bdf-9abbd40f0210",
+    "name": "T06.3: Wyświetlenie szczegółów drużyny z Tabeli wyników",
+    "commands": [{
+      "id": "e9fcdcce-3298-422e-94d8-b41d82b58205",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b13052ca-ab2d-4db8-bcfd-cafa216096f9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e0b2478c-2d1b-498a-b232-939586b2fe1c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Tabela",
+      "targets": [
+        ["linkText=Tabela", "linkText"],
+        ["css=.dropdown:nth-child(3) > .dropdown-toggle", "css:finder"],
+        ["xpath=//a[contains(text(),'Tabela')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[3]", "xpath:href"],
+        ["xpath=//div[3]/ul/li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e075ae1-16f4-4926-914d-c9ff55d766ea",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Amatorska Liga Podwórkowa Piłki Nożnej",
+      "targets": [
+        ["linkText=Amatorska Liga Podwórkowa Piłki Nożnej", "linkText"],
+        ["css=.open li:nth-child(1) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Amatorska Liga Podwórkowa Piłki Nożnej')])[2]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[3]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/tables/Amatorska Liga Podwórkowa Piłki Nożnej/')]", "xpath:href"],
+        ["xpath=//li[3]/ul/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b483752-e04e-4dfe-840f-3d64ffbbda3b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ekipa Naramowice",
+      "targets": [
+        ["linkText=Ekipa Naramowice", "linkText"],
+        ["css=tr:nth-child(7) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ekipa Naramowice')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/teams/Ekipa Naramowice/')]", "xpath:href"],
+        ["xpath=//tr[7]/th[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ekipa Naramowice')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "70c2d49b-6459-4d8c-bcd1-65198a9a9493",
+    "name": "T10: Dodanie ogłoszenia",
+    "commands": [{
+      "id": "4d1d3822-2d0a-464c-b8fc-7376131f9219",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9f209042-7935-4d0c-b2cb-e9b9cb139af2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b23ab768-18d9-464b-86d2-6eeb28071760",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj",
+      "targets": [
+        ["linkText=Dodaj", "linkText"],
+        ["css=.dropdown:nth-child(5) > .dropdown-toggle", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
+        ["xpath=//div[3]/ul/li[5]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e0c1e637-a388-406e-b801-bca201de003a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj ogłoszenie",
+      "targets": [
+        ["linkText=Dodaj ogłoszenie", "linkText"],
+        ["css=.open li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj ogłoszenie')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[5]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/note/new')]", "xpath:href"],
+        ["xpath=//li[5]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dodaj ogłoszenie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2a3dc52f-20dd-4afa-b3f6-12ed14661f74",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_title",
+      "targets": [
+        ["id=id_title", "id"],
+        ["name=title", "name"],
+        ["css=#id_title", "css:finder"],
+        ["xpath=//input[@id='id_title']", "xpath:attributes"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f13f618-c5fe-441f-9800-9eed86106ae5",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_title",
+      "targets": [
+        ["id=id_title", "id"],
+        ["name=title", "name"],
+        ["css=#id_title", "css:finder"],
+        ["xpath=//input[@id='id_title']", "xpath:attributes"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": "Ważna informacja_selenium"
+    }, {
+      "id": "d0569de6-d43f-4a32-8c09-9a0fbe300fb9",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_note",
+      "targets": [
+        ["id=id_note", "id"],
+        ["name=note", "name"],
+        ["css=#id_note", "css:finder"],
+        ["xpath=//textarea[@id='id_note']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "60c7077f-2e1c-46f3-b12c-dbffde1215ef",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_note",
+      "targets": [
+        ["id=id_note", "id"],
+        ["name=note", "name"],
+        ["css=#id_note", "css:finder"],
+        ["xpath=//textarea[@id='id_note']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Z przyczyn od nas niezależnych jesteśmy zmuszeni odwołać rozgrywki. Jeśli sytuacja się zmieni niezwłocznie o tym poinformujemy_selenium"
+    }, {
+      "id": "372063b2-cc1d-4757-8839-7bb8ebff3a4d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.save",
+      "targets": [
+        ["css=.save", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zapisz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "ddba8bb3-892d-46e3-8fe7-01d15217bfac",
+    "name": "T11: Dodanie ligi",
+    "commands": [{
+      "id": "51ba2fd6-c8c9-494d-bf91-bae623729113",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b29850fe-cdc6-47cd-89d4-da9377538c00",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "22a831ff-d49a-4217-98a4-0f8a4d5882fa",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj",
+      "targets": [
+        ["linkText=Dodaj", "linkText"],
+        ["css=.dropdown:nth-child(6) > .dropdown-toggle", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[6]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
+        ["xpath=//div[3]/ul/li[6]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9b3c452-9bae-4a06-a788-16848eedec69",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Zgłoś ligę",
+      "targets": [
+        ["linkText=Zgłoś ligę", "linkText"],
+        ["css=.open li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Zgłoś ligę')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[5]/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/league/new')]", "xpath:href"],
+        ["xpath=//li[5]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Zgłoś ligę')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc1636b4-3495-4656-83ac-67e15a1be925",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_league_name",
+      "targets": [
+        ["id=id_league_name", "id"],
+        ["name=league_name", "name"],
+        ["css=#id_league_name", "css:finder"],
+        ["xpath=//input[@id='id_league_name']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "54e42c3d-29e2-4777-953a-9a92152bbe08",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_league_name",
+      "targets": [
+        ["id=id_league_name", "id"],
+        ["name=league_name", "name"],
+        ["css=#id_league_name", "css:finder"],
+        ["xpath=//input[@id='id_league_name']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": "testowa_liga_selenium"
+    }, {
+      "id": "a171c1f8-f7d0-40ba-b448-2a181c4c1ea2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.save",
+      "targets": [
+        ["css=.save", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zapisz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "03b4885a-71c4-47cd-8f05-73145311772c",
+    "name": "T12: Dodanie drużyny gospodarzy",
+    "commands": [{
+      "id": "40dc13c6-d644-4d0e-b5f2-4c022e5fac21",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0c79eb66-caf6-4522-86ba-b8918a099ebf",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "28cd41ee-900f-4990-bad9-54f49eb7e3ec",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj",
+      "targets": [
+        ["linkText=Dodaj", "linkText"],
+        ["css=.dropdown:nth-child(6) > .dropdown-toggle", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[6]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "54000e5b-cabd-43d7-87e2-44494b648641",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Zgłoś drużynę",
+      "targets": [
+        ["linkText=Zgłoś drużynę", "linkText"],
+        ["css=.open li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Zgłoś drużynę')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[6]/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/team/new')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Zgłoś drużynę')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e55f28ae-b81f-43de-836c-bf209c531f05",
+      "comment": "",
+      "command": "addSelection",
+      "target": "id=id_league",
+      "targets": [
+        ["id=id_league", "id"],
+        ["name=league", "name"],
+        ["css=#id_league", "css:finder"],
+        ["xpath=//select[@id='id_league']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "label=testowa_liga_selenium"
+    }, {
+      "id": "7a3e674f-a5bc-478f-a6d9-3c624724b447",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_team_name",
+      "targets": [
+        ["id=id_team_name", "id"],
+        ["name=team_name", "name"],
+        ["css=#id_team_name", "css:finder"],
+        ["xpath=//input[@id='id_team_name']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "adcfd476-b699-463a-8907-11fbd93118d9",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_team_name",
+      "targets": [
+        ["id=id_team_name", "id"],
+        ["name=team_name", "name"],
+        ["css=#id_team_name", "css:finder"],
+        ["xpath=//input[@id='id_team_name']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": "testowa_druzyna_selenium"
+    }, {
+      "id": "16083e27-1673-4160-9161-f6434d2a0a55",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_team_short",
+      "targets": [
+        ["id=id_team_short", "id"],
+        ["name=team_short", "name"],
+        ["css=#id_team_short", "css:finder"],
+        ["xpath=//input[@id='id_team_short']", "xpath:attributes"],
+        ["xpath=//p[3]/input", "xpath:position"]
+      ],
+      "value": "tds"
+    }, {
+      "id": "5eb309fa-0c05-4ba0-ab0e-058a869934e1",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_place",
+      "targets": [
+        ["id=id_place", "id"],
+        ["name=place", "name"],
+        ["css=#id_place", "css:finder"],
+        ["xpath=//input[@id='id_place']", "xpath:attributes"],
+        ["xpath=//p[4]/input", "xpath:position"]
+      ],
+      "value": "XXX"
+    }, {
+      "id": "c3c4f3b8-ad00-4b18-a92e-c30020f3275b",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_comments",
+      "targets": [
+        ["id=id_comments", "id"],
+        ["name=comments", "name"],
+        ["css=#id_comments", "css:finder"],
+        ["xpath=//textarea[@id='id_comments']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "200867ad-8bce-40bc-bc28-29897ad4e20a",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_comments",
+      "targets": [
+        ["id=id_comments", "id"],
+        ["name=comments", "name"],
+        ["css=#id_comments", "css:finder"],
+        ["xpath=//textarea[@id='id_comments']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test_formularza"
+    }, {
+      "id": "bc120303-e7e9-4fc7-ba4c-43cf6aa51afd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.save",
+      "targets": [
+        ["css=.save", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zapisz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "217ce577-e2e0-4600-ab11-2b3937302b1c",
+    "name": "T12: Dodanie drużyny gości",
+    "commands": [{
+      "id": "1193a7c4-20ea-4f9d-964e-8c1702547186",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "48b53d35-4fe3-4f44-a172-ecd2655fab66",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4e632f16-5572-4413-a9f6-1c0c5e16b521",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj",
+      "targets": [
+        ["linkText=Dodaj", "linkText"],
+        ["css=.dropdown:nth-child(6) > .dropdown-toggle", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[6]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "77d38b01-18da-4480-9c1b-d14955f9aff9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Zgłoś drużynę",
+      "targets": [
+        ["linkText=Zgłoś drużynę", "linkText"],
+        ["css=.open li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Zgłoś drużynę')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[6]/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/team/new')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Zgłoś drużynę')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "584626e3-0da5-4c2f-ab67-7099f6f1b018",
+      "comment": "",
+      "command": "addSelection",
+      "target": "id=id_league",
+      "targets": [
+        ["id=id_league", "id"],
+        ["name=league", "name"],
+        ["css=#id_league", "css:finder"],
+        ["xpath=//select[@id='id_league']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "label=testowa_liga_selenium"
+    }, {
+      "id": "8f1b7bc4-4d19-48ff-9901-ff854b6e2c9f",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_team_name",
+      "targets": [
+        ["id=id_team_name", "id"],
+        ["name=team_name", "name"],
+        ["css=#id_team_name", "css:finder"],
+        ["xpath=//input[@id='id_team_name']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "76e3a081-4a0e-4d39-a289-7d572ebb5689",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_team_name",
+      "targets": [
+        ["id=id_team_name", "id"],
+        ["name=team_name", "name"],
+        ["css=#id_team_name", "css:finder"],
+        ["xpath=//input[@id='id_team_name']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": "testowa_druzyna_selenium_2"
+    }, {
+      "id": "81a0c118-77b1-4536-b5ef-bd1f3e17a1c1",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_team_short",
+      "targets": [
+        ["id=id_team_short", "id"],
+        ["name=team_short", "name"],
+        ["css=#id_team_short", "css:finder"],
+        ["xpath=//input[@id='id_team_short']", "xpath:attributes"],
+        ["xpath=//p[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0afcc6b-8995-4fa6-acf6-137eb9a8efc3",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_team_short",
+      "targets": [
+        ["id=id_team_short", "id"],
+        ["name=team_short", "name"],
+        ["css=#id_team_short", "css:finder"],
+        ["xpath=//input[@id='id_team_short']", "xpath:attributes"],
+        ["xpath=//p[3]/input", "xpath:position"]
+      ],
+      "value": "tds2"
+    }, {
+      "id": "e08c1953-0119-48a7-8791-8502b959da53",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_place",
+      "targets": [
+        ["id=id_place", "id"],
+        ["name=place", "name"],
+        ["css=#id_place", "css:finder"],
+        ["xpath=//input[@id='id_place']", "xpath:attributes"],
+        ["xpath=//p[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e739d3a8-74db-4fff-862d-0b78bdc2a98a",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_place",
+      "targets": [
+        ["id=id_place", "id"],
+        ["name=place", "name"],
+        ["css=#id_place", "css:finder"],
+        ["xpath=//input[@id='id_place']", "xpath:attributes"],
+        ["xpath=//p[4]/input", "xpath:position"]
+      ],
+      "value": "xxx"
+    }, {
+      "id": "c9a025a7-496f-4537-977e-598b989076ae",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_comments",
+      "targets": [
+        ["id=id_comments", "id"],
+        ["name=comments", "name"],
+        ["css=#id_comments", "css:finder"],
+        ["xpath=//textarea[@id='id_comments']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e934cac-6ff9-4cd8-bf15-24b8d343519f",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_comments",
+      "targets": [
+        ["id=id_comments", "id"],
+        ["name=comments", "name"],
+        ["css=#id_comments", "css:finder"],
+        ["xpath=//textarea[@id='id_comments']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "xxx2"
+    }, {
+      "id": "46d020f7-6c2a-43a1-bd55-e1fc6092a1ba",
+      "comment": "",
+      "command": "click",
+      "target": "css=.save",
+      "targets": [
+        ["css=.save", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zapisz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "0a2f34b7-8651-4459-8cf1-6ba0bad8be6e",
+    "name": "T13: Dodanie meczu",
+    "commands": [{
+      "id": "cceaa87d-87da-4c89-badb-e2fa02375ab4",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "533aa2dc-bbaf-4e1b-93d6-12d0760bb638",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "045407bd-4a4a-4759-810f-6e781b36a3c7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj",
+      "targets": [
+        ["linkText=Dodaj", "linkText"],
+        ["css=.dropdown:nth-child(6) > .dropdown-toggle", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[6]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd8e1a8e-1c98-45e2-a0fc-deb3606b0bf1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj wynik meczu",
+      "targets": [
+        ["linkText=Dodaj wynik meczu", "linkText"],
+        ["css=.dropdown-menu > li:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj wynik meczu')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[6]/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/match/new')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dodaj wynik meczu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f07f55f2-be92-4ecd-befa-438df8bc25ed",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_league",
+      "targets": [
+        ["id=id_league", "id"],
+        ["name=league", "name"],
+        ["css=#id_league", "css:finder"],
+        ["xpath=//select[@id='id_league']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1e020d0-80ef-4d8b-9a48-23d3f551c71e",
+      "comment": "",
+      "command": "select",
+      "target": "id=id_league",
+      "targets": [],
+      "value": "label=testowa_liga_selenium"
+    }, {
+      "id": "c6a703a2-bf15-4dce-8fb5-c0193b7ba95f",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_league",
+      "targets": [
+        ["id=id_league", "id"],
+        ["name=league", "name"],
+        ["css=#id_league", "css:finder"],
+        ["xpath=//select[@id='id_league']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0002b0f1-4eb0-4efb-97b3-a2b3b63cf213",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(2)", "css:finder"],
+        ["xpath=//tr[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d54c3a38-2cb3-4b07-a057-a621c2237c47",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_host_team",
+      "targets": [
+        ["id=id_host_team", "id"],
+        ["name=host_team", "name"],
+        ["css=#id_host_team", "css:finder"],
+        ["xpath=//select[@id='id_host_team']", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0b7187e4-7d8c-4182-9f1e-9ee8cbb77428",
+      "comment": "",
+      "command": "select",
+      "target": "id=id_host_team",
+      "targets": [],
+      "value": "label=testowa_druzyna_selenium"
+    }, {
+      "id": "fd131d90-bb32-47a9-adfc-b8f0024a1e48",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_host_team",
+      "targets": [
+        ["id=id_host_team", "id"],
+        ["name=host_team", "name"],
+        ["css=#id_host_team", "css:finder"],
+        ["xpath=//select[@id='id_host_team']", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e2cea8d-c591-4d69-a1d4-80378760cfba",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(4)",
+      "targets": [
+        ["css=tr:nth-child(4)", "css:finder"],
+        ["xpath=//tr[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "61fec978-3a5f-4816-8586-ceaf7feb47c0",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_host_team_goals",
+      "targets": [
+        ["id=id_host_team_goals", "id"],
+        ["name=host_team_goals", "name"],
+        ["css=#id_host_team_goals", "css:finder"],
+        ["xpath=//input[@id='id_host_team_goals']", "xpath:attributes"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "2a2f7600-db3c-49cc-bf41-440ae18054c7",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_guest_team",
+      "targets": [
+        ["id=id_guest_team", "id"],
+        ["name=guest_team", "name"],
+        ["css=#id_guest_team", "css:finder"],
+        ["xpath=//select[@id='id_guest_team']", "xpath:attributes"],
+        ["xpath=//tr[5]/td[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "042db9fb-a0ee-4b4d-9546-8e18e0bd64de",
+      "comment": "",
+      "command": "select",
+      "target": "id=id_guest_team",
+      "targets": [],
+      "value": "label=testowa_druzyna_selenium_2"
+    }, {
+      "id": "d1e6dc71-ba8e-40e7-899c-6bbc773ab320",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_guest_team",
+      "targets": [
+        ["id=id_guest_team", "id"],
+        ["name=guest_team", "name"],
+        ["css=#id_guest_team", "css:finder"],
+        ["xpath=//select[@id='id_guest_team']", "xpath:attributes"],
+        ["xpath=//tr[5]/td[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d39f361a-0790-4419-8172-18d697269f7a",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(6)",
+      "targets": [
+        ["css=tr:nth-child(6)", "css:finder"],
+        ["xpath=//tr[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d50fabe-c1fa-4c83-a555-6563219bdbb3",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_guest_team_goals",
+      "targets": [
+        ["id=id_guest_team_goals", "id"],
+        ["name=guest_team_goals", "name"],
+        ["css=#id_guest_team_goals", "css:finder"],
+        ["xpath=//input[@id='id_guest_team_goals']", "xpath:attributes"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "379dcdcc-db7b-4034-8720-08786b655785",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_game_date",
+      "targets": [
+        ["id=id_game_date", "id"],
+        ["name=game_date", "name"],
+        ["css=#id_game_date", "css:finder"],
+        ["xpath=//input[@id='id_game_date']", "xpath:attributes"],
+        ["xpath=//tr[7]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "48f2b685-ef42-4f93-8e2c-d323e78a57f6",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_game_date",
+      "targets": [
+        ["id=id_game_date", "id"],
+        ["name=game_date", "name"],
+        ["css=#id_game_date", "css:finder"],
+        ["xpath=//input[@id='id_game_date']", "xpath:attributes"],
+        ["xpath=//tr[7]/td[2]/input", "xpath:position"]
+      ],
+      "value": "23.05.2020 12:35:13"
+    }, {
+      "id": "b85682d8-893a-4db7-92c8-7ead95f0db7c",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_place",
+      "targets": [
+        ["id=id_place", "id"],
+        ["name=place", "name"],
+        ["css=#id_place", "css:finder"],
+        ["xpath=//input[@id='id_place']", "xpath:attributes"],
+        ["xpath=//tr[8]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "589fdda1-091f-434a-ad1a-9507e0630c06",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_place",
+      "targets": [
+        ["id=id_place", "id"],
+        ["name=place", "name"],
+        ["css=#id_place", "css:finder"],
+        ["xpath=//input[@id='id_place']", "xpath:attributes"],
+        ["xpath=//tr[8]/td[2]/input", "xpath:position"]
+      ],
+      "value": "xxx"
+    }, {
+      "id": "d6ebc40b-6913-4d19-9238-34a32e805105",
+      "comment": "",
+      "command": "click",
+      "target": "id=id_comments",
+      "targets": [
+        ["id=id_comments", "id"],
+        ["name=comments", "name"],
+        ["css=#id_comments", "css:finder"],
+        ["xpath=//textarea[@id='id_comments']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a497261-421c-42d2-8e62-b24d7a3cbe25",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_comments",
+      "targets": [
+        ["id=id_comments", "id"],
+        ["name=comments", "name"],
+        ["css=#id_comments", "css:finder"],
+        ["xpath=//textarea[@id='id_comments']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "xxx"
+    }, {
+      "id": "012169b0-6b92-4c16-928e-1d89527b1612",
+      "comment": "",
+      "command": "click",
+      "target": "css=.save",
+      "targets": [
+        ["css=.save", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Zapisz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d4344855-1b2e-4915-b25b-cf1317486819",
+    "name": "T05: Wyszukanie drużyny",
+    "commands": [{
+      "id": "40215f63-3e3b-447c-8cac-98a74f972fe5",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9b2e8c3f-0651-4208-a6b9-67557c7d7c41",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ea00864-c086-43a6-b159-1657a0ea8936",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Drużyny",
+      "targets": [
+        ["linkText=Drużyny", "linkText"],
+        ["css=li:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Drużyny')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/teams_list')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Drużyny')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f8977d1-9969-46f7-ba55-d4ecdd229fac",
+      "comment": "",
+      "command": "click",
+      "target": "id=search_team_name",
+      "targets": [
+        ["id=search_team_name", "id"],
+        ["css=#search_team_name", "css:finder"],
+        ["xpath=//input[@id='search_team_name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8aff0de1-64f1-446e-9f92-4697e0daa35b",
+      "comment": "",
+      "command": "type",
+      "target": "id=search_team_name",
+      "targets": [
+        ["id=search_team_name", "id"],
+        ["css=#search_team_name", "css:finder"],
+        ["xpath=//input[@id='search_team_name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "tsuna"
+    }]
+  }, {
+    "id": "aee43b02-4e12-42e5-9a31-7bcbd98f6dcf",
+    "name": "wyszukiwanie_drużyn_po_nazwie_skróconej",
+    "commands": [{
+      "id": "99fcaea6-4b11-4fb2-a581-b9021e7938bd",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9bab38cb-96df-46f7-b752-6cd8a69c0413",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7a504fee-f19f-406b-8ccf-61c9b46882da",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Drużyny",
+      "targets": [
+        ["linkText=Drużyny", "linkText"],
+        ["css=li:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Drużyny')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/teams_list')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Drużyny')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "35522518-5417-402d-bdfb-bafe2c758545",
+      "comment": "",
+      "command": "click",
+      "target": "id=search_team_name",
+      "targets": [
+        ["id=search_team_name", "id"],
+        ["css=#search_team_name", "css:finder"],
+        ["xpath=//input[@id='search_team_name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "329f18f1-10d5-4317-9964-2731f4df77ae",
+      "comment": "",
+      "command": "type",
+      "target": "id=search_team_name",
+      "targets": [
+        ["id=search_team_name", "id"],
+        ["css=#search_team_name", "css:finder"],
+        ["xpath=//input[@id='search_team_name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "cfc"
+    }]
+  }, {
+    "id": "aa48f855-1e7b-487f-818e-89aa06f81b13",
+    "name": "wyszukiwanie_drużyn_po_miejscowości",
+    "commands": [{
+      "id": "20c7abb4-5be6-47c1-b896-578d3393b302",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "02d25660-e663-45f7-8d77-26eca03d5eef",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f997c5d1-6f79-4481-b4ba-f10c058c197c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Drużyny",
+      "targets": [
+        ["linkText=Drużyny", "linkText"],
+        ["css=li:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Drużyny')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/teams_list')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Drużyny')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f38ca4b-79a3-4c70-919d-81ed55b9f6dc",
+      "comment": "",
+      "command": "click",
+      "target": "id=search_team_name",
+      "targets": [
+        ["id=search_team_name", "id"],
+        ["css=#search_team_name", "css:finder"],
+        ["xpath=//input[@id='search_team_name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "62aa01b4-f889-4404-afa7-22619bb9f7f5",
+      "comment": "",
+      "command": "type",
+      "target": "id=search_team_name",
+      "targets": [
+        ["id=search_team_name", "id"],
+        ["css=#search_team_name", "css:finder"],
+        ["xpath=//input[@id='search_team_name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Pozna"
+    }]
+  }, {
+    "id": "7165453f-4dd0-49c5-b9f9-7c806e448653",
+    "name": "T09: Wylogowanie z aplikacji",
+    "commands": [{
+      "id": "730c4394-1e57-4700-94e7-faca4f7a0293",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f126ad01-5741-4e87-ad0a-febc34795de0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "968x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "44da9862-b706-4ec2-a2e8-5a90d8108802",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Wyloguj",
+      "targets": [
+        ["linkText=Wyloguj", "linkText"],
+        ["css=.navbar-right > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Wyloguj')]", "xpath:link"],
+        ["xpath=//div[@id='myNavbar']/ul[2]/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/accounts/logout/')]", "xpath:href"],
+        ["xpath=//ul[2]/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Wyloguj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "ec8fd6ca-afd9-4f1f-a10c-30e2579c694b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://amatorskaligapodworkowa.pythonanywhere.com/"],
+  "plugins": []
+}
