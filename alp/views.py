@@ -4,6 +4,8 @@ from django.utils import timezone
 from .models import Match, League, Team, Note
 from .table import Row_Table
 from .forms import Note_Form, League_Form, Team_Form, Match_Form
+from django.db.models.functions import Upper
+
 
 def note_form(request):
     leagues = get_list_or_404(League)
@@ -92,7 +94,7 @@ def league_table(request, league_name):
 
 def teams_list(request):
     leagues = get_list_or_404(League)
-    teams = get_list_or_404(Team.objects.order_by('team_name'))
+    teams = get_list_or_404(Team.objects.order_by(Upper('team_name')))
     return render(request, 'alp/teams_list.html', {'leagues': leagues, 'teams': teams})
 
 def sort_table(table):

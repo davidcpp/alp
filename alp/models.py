@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.db.models.functions import Upper
 
 class Sport(models.Model):
     sport_name = models.CharField(max_length=100, default='Football', unique=True)
@@ -30,7 +31,7 @@ class Team(models.Model):
     comments = models.TextField(default="", null=True, blank=True)
 
     class Meta:
-        ordering = ['team_name']
+        ordering = [Upper('team_name')]
 
     def __str__(self):
         return self.team_name
