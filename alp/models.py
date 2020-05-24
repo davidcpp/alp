@@ -14,7 +14,7 @@ class Sport(models.Model):
 
 class League(models.Model):
     league_name = models.CharField(max_length=100, unique=True)
-    sport = models.ForeignKey(Sport, on_delete=models.CASCADE)
+    sport = models.ForeignKey(Sport, on_delete=models.CASCADE, default='Football')
 
     class Meta:
         ordering = ['league_name']

@@ -3,12 +3,12 @@ from django.db.models import Q
 from django.utils import timezone
 from .models import Match, League, Team, Note
 from .table import Row_Table
-from .forms import NoteForm
+from .forms import Note_Form, League_Form, Team_Form, Match_Form
 
-def note_new(request):
+def note_form(request):
     leagues = get_list_or_404(League)
     if request.method == "POST":
-        form = NoteForm(request.POST)
+        form = Note_Form(request.POST)
         if form.is_valid():
             note = form.save(commit=False)
             note.author = request.user
@@ -16,8 +16,41 @@ def note_new(request):
             note.save()
             return redirect('/')
     else:
-        form = NoteForm()
-    return render(request, 'alp/note_new.html', {'form': form, 'leagues': leagues})
+        form = Note_Form()
+    return render(request, 'alp/note_form.html', {'form': form, 'leagues': leagues})
+
+def league_form(request):
+    leagues = get_list_or_404(League)
+    if request.method == "POST":
+        form = League_Form(request.POST)
+        if form.is_valid():
+            league = form.save()
+            return redirect('/')
+    else:
+        form = League_Form()
+    return render(request, 'alp/league_form.html', {'form': form, 'leagues': leagues})
+
+def team_form(request):
+    leagues = get_list_or_404(League)
+    if request.method == "POST":
+        form = Team_Form(request.POST)
+        if form.is_valid():
+            team = form.save()
+            return redirect('/')
+    else:
+        form = Team_Form()
+    return render(request, 'alp/team_form.html', {'form': form, 'leagues': leagues})
+
+def match_form(request):
+    leagues = get_list_or_404(League)
+    if request.method == "POST":
+        form = Match_Form(request.POST)
+        if form.is_valid():
+            team = form.save()
+            return redirect('/')
+    else:
+        form = Match_Form()
+    return render(request, 'alp/match_form.html', {'form': form, 'leagues': leagues})
 
 def league_match_list(request, league_name):
     matches = Match.objects.all().filter(league__league_name = league_name)
@@ -28,7 +61,6 @@ def league_team_match_list(request, team_name):
     leagues = get_list_or_404(League)
     matches = Match.objects.all().filter(Q(host_team__team_name=team_name) | Q(guest_team__team_name=team_name))
     team = get_list_or_404(Team, team_name=team_name)
-    # print(matches[0].league.league_name)
     return render(request, 'alp/matches_team_results.html', {'matches' : matches, 'leagues': leagues, 'team': team[0],
                                                              'team_leagues': team[0].league.all()})
 
@@ -53,8 +85,6 @@ def league_table(request, league_name):
             add_result_to_table(team.team_name, table, match.host_team_goals, match.guest_team_goals)
         # matches as guest
         matches = Match.objects.all().filter(Q(league__league_name=league_name) & Q(guest_team__team_name=team.team_name))
-        # matches = get_list_or_404(Match, Q(league__league_name=league_name) & Q(guest_team__team_name=team.team_name))
-        print('Hello')
         for match in matches:
             add_result_to_table(team.team_name, table, match.guest_team_goals, match.host_team_goals)
     team_ranking = sort_table(table)
@@ -70,13 +100,11 @@ def sort_table(table):
         row.calculate_points()
         row.calculate_matches()
         row.calculate_goal_balance()
-        print(row.print())
     ranking = sorted(table, key=lambda row: (row.points, row.goal_balance, row.goals_scored), reverse=True)
     rank = 1
     for row in ranking:
         row.set_ranking(rank)
         rank += 1
-        print(row.print())
     return ranking
 
 def add_result_to_table(team_name, table, goals_scored, goals_lost):
@@ -88,12 +116,11 @@ def add_result_to_table(team_name, table, goals_scored, goals_lost):
             row.goals_scored += goals_scored
             row.goals_lost += goals_lost
             row.result(goals_scored, goals_lost)
-            print(row.team_name)
             next_match = True
     # first match of team
     if (next_match == False):
         row = Row_Table(team_name, 0, 0, 0, goals_scored, goals_lost)
         row.result(goals_scored, goals_lost)
         table.append(row)
-        print(row.print())
+
 

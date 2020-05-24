@@ -91,10 +91,10 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dodaj
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="{% url 'note_new' %}">Dodaj ogłoszenie</a></li>
-            <li><a href="#">Zgłoś ligę</a></li>
-            <li><a href="#">Zgłoś drużynę</a></li>
-            <li><a href="#">Dodaj wynik meczu</a></li>
+          <li><a href="{% url 'note_form' %}">Dodaj ogłoszenie</a></li>
+            <li><a href="{% url 'league_form' %}">Zgłoś ligę</a></li>
+            <li><a href="{% url 'team_form' %}">Zgłoś drużynę</a></li>
+            <li><a href="{% url 'match_form' %}">Dodaj wynik meczu</a></li>
         </ul>
       </li>
           {% endif %}
