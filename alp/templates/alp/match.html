@@ -14,6 +14,15 @@
         <td style = "width: 30px; padding: 15px"><i class='fas fa-map-marker-alt' style='font-size:20px'></i></td>
         <td ><h4>{{match.place}}</h4></td>
     </tr>
+
+    {% if match.comments == null or  match.comments == "" %}
+    {%else%}
+    <tr>
+        <td style = "width: 30px; padding: 15px"><i class='far fa-sticky-note' style='font-size:20px'></i></td>
+        <td ><h4>{{match.comments}}</h4></td>
+    </tr>
+   {%endif%}
+
 </table>
 <br>
 <h4>Kolejka {{match.round_game}}</h4>
@@ -29,16 +38,5 @@
         <td><h1 class="display-1"> {{match.guest_team_goals}}</h1></td>
     </tr>
 </table><br>
-{% if match.comments == null or  match.comments == "" %}
-{%else%}
 
-<table class="table table-bordered table-striped ">
-    <tr>
-        <td style = "width: 45%;"><h5 class="display-5">Szczegóły meczu</h5></td>
-    </tr>
-    <tr>
-        <td><h5 class="display-5" >{{match.comments}}</h5></td>
-    </tr>
-</table>
-{% endif %}
 {% endblock %}

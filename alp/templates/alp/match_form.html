@@ -1,7 +1,7 @@
 {% extends 'alp/base.html' %}
 {% block content %}
 
-    <h2>Zgłoś wynik meczu</h2>
+    <h2>Dodaj wynik meczu</h2>
     <form method="POST" class="post-form">{% csrf_token %}
 {% if form.errors %}
     <div class="alert alert-danger alert-dismissible col-12 mx-1" role="alert">
@@ -42,10 +42,6 @@
             <tr>
                 <td>{{ form.guest_team_goals.label}}</td>
                 <td>{{ form.guest_team_goals}}</td>
-              </tr>
-                <tr>
-                <td>{{ form.game_date.label}}</td>
-                <td>{{ form.game_date}}</td>
               </tr>
               <tr>
                 <td>{{ form.place.label}}</td>
