@@ -2,14 +2,13 @@
 {% block content %}
 
 {% for note in notes %}
-<div class="panel-group">
+<div class="panel-group" style = "word-wrap:break-word;">
     <div class="panel panel-default">
       <div class="panel-heading" ><b>{{note.title}}</b> </div>
-      <div class="panel-body">
+      <div class="panel-body" >
         <p style = "text-align:right";>Dodane <i>{{note.publish_date}} </i> przez: <i>{{note.author}}</i></p>
         <blockquote>{{note.note}}</blockquote></div>
     </div>
   </div>
   {% endfor %}
-
 {% endblock %}
