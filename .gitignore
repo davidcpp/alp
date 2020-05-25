@@ -9,3 +9,4 @@ db_old.sqlite3
 /.idea/*
 .idea/workspace.xml
 /Produkcja
+debug.log
